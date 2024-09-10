@@ -17,11 +17,15 @@ public class Book {
     }
 
     public void printShortInfo() {
-        System.out.printf("Short info. title: %s, author: %s, publications: %s%n", title, author, publications.size());
+        System.out.printf("Short info. title: %s%n", title);
+        System.out.println( " author: " + "publications: " + publications.size());
+
     }
 
     public void printInfo() {
-        System.out.printf("BookInfo. title: %s, genre: %s, author: %s ", title, genre, author);
+        System.out.printf("BookInfo. title: %s, genre: %s", title, genre);
+        System.out.print(" Author: ");
+        author.printInfo();
         System.out.println();
 
         System.out.println("Book publications ");

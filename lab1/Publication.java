@@ -14,7 +14,7 @@ public class Publication {
 
     public void printInfo() {
         System.out.printf("PublicationInfo. title: %s, genre: %s%n ", title, genre);
-        System.out.println("Author birthdate: ");
+        System.out.println("Publish date: ");
         publishDate.printInfo();
         System.out.println("________________");
     }
