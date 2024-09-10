@@ -22,5 +22,26 @@ public class Main {
         System.out.println("book1 info via getter: ");
         author.printInfo();
         System.out.println("__________________________________________________");
+
+        Author Author2 = new Author("Ivann ","Franko", new Date(27, 8, 1856));
+        Publication pub3 = new Publication("Zahar Berkut2", BookGenre.FICTION, new Date(12, 6, 1394));
+        Publication pub4 = new Publication("Zahar Berkut2", BookGenre.SCIENCE, new Date(32, 1, 2007));
+
+
+        Book book2 = new Book("Zahar Berkut", BookGenre.FICTION, author);
+        book2.addPublication(pub3);
+        book2.addPublication(pub4);
+
+        System.out.println("book2 full info");
+        book2.printInfo();
+        System.out.println("__________________________________________________");
+
+        System.out.println("book2 short info");
+        book2.printShortInfo();
+        System.out.println("__________________________________________________");
+
+        Author author2 = book2.getAuthor();
+        System.out.println("book2 info via getter: ");
+        Author2.printInfo();
     }
 }
