@@ -9,6 +9,8 @@ public class Book {
     private Author author;
     private List<Publication> publications = new ArrayList<>();
 
+    public Book() {
+    }
 
     public Book(String title, BookGenre genre, Author author) {
         this.title = title;
@@ -22,22 +24,34 @@ public class Book {
 
     }
 
+    public void addPublication(Publication publication) {
+        publications.add(publication);
+    }
+
     public void printInfo() {
         System.out.printf("BookInfo. title: %s, genre: %s", title, genre);
         System.out.print(" Author: ");
         author.printInfo();
         System.out.println();
 
-        System.out.println("Book publications ");
+        System.out.println("Book  ");
         for (Publication publication : publications) {
             publication.printInfo();
         }
         System.out.println("________________");
     }
 
-    public void addPublication(Publication publication) {
-        publications.add(publication);
+    @Override
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
+        for (Publication publication : publications) {
+            sb.append(publication.toString()).append("\n");
+        }
+
+        return "title=%s, genre=%s, \nAuthor=[%s],%nPublications [%n%s]".formatted(title, genre, author.toString(), sb.toString());
     }
+
+
 
     public List<Publication> getPublications() {
         return publications;

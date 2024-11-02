@@ -5,6 +5,9 @@ public class Author {
     private String surname;
     private Date birthdate;
 
+    public Author() {
+    }
+
     public Author(String name, String surname, Date birthdate) {
         this.name = name;
         this.surname = surname;
@@ -16,6 +19,11 @@ public class Author {
         System.out.println("Author birthdate: ");
         birthdate.printInfo();
         System.out.println("________________");
+    }
+
+    @Override
+    public String toString() {
+        return "name=%s, surname=%s, birthdate=%s".formatted(name, surname, birthdate.toString());
     }
 
     public String getName() {

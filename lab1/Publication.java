@@ -5,6 +5,8 @@ public class Publication {
     private BookGenre genre;
     private Date publishDate;
 
+    public Publication() {
+    }
 
     public Publication(String title, BookGenre genre, Date publishDate) {
         this.title = title;
@@ -17,6 +19,11 @@ public class Publication {
         System.out.println("Publish date: ");
         publishDate.printInfo();
         System.out.println("________________");
+    }
+
+    @Override
+    public String toString() {
+        return "title=%s, genre=%s, publishDate=%s".formatted(title, genre, publishDate.toString());
     }
 
     public String getTitle() {

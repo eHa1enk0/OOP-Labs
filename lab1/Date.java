@@ -21,6 +21,11 @@ public class Date {
         System.out.printf("Date info: day: %s, month: %s, year: %s%n", day, month, year);
     }
 
+    @Override
+    public String toString() {
+        return day + "." + month + "." + year;
+    }
+
     public int getYear() {
         return year;
     }
