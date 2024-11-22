@@ -1,4 +1,4 @@
-package lab1;
+package lab2;
 
 import lombok.Getter;
 import lombok.Setter;

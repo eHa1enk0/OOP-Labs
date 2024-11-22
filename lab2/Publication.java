@@ -1,4 +1,4 @@
-package lab1;
+package lab2;
 
 public class Publication {
     private String title;
