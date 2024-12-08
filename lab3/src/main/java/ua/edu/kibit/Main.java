@@ -21,8 +21,14 @@ public class Main {
         ExecutorService executor = Executors.newFixedThreadPool(threads);
         Future[] futures = new Future[arr.length];
 
+        int chunk = size / threads;
+        for (int i = 0; i < arr.length; i = i + chunk) {
+            int end = Math.min(i + chunk, arr.length);
+            executor.execute(new CalculatePlotTask(arr, i, end, new MyTrigFunc()));
+        }
+
         long milli2 = System.currentTimeMillis();
-        System.out.println("Time taken: " + (milli - milli2) + " ms");
+        System.out.println("Time taken: " + (milli2 - milli) + " ms");
         PlotDisplayer.showChart(arr, step);
     }
 }

@@ -2,7 +2,7 @@ package ua.edu.kibit;
 
 import java.util.concurrent.Callable;
 
-public class CalculatePlotTask implements Callable<Double> {
+public class CalculatePlotTask implements Runnable {
     private final double[] arr;
 
     private final int start;
@@ -19,10 +19,9 @@ public class CalculatePlotTask implements Callable<Double> {
     }
 
     @Override
-    public Double call()  {
+    public void run() {
         for (int i = start; i < end; i++) {
             arr[i] = function.calculate(arr[i]);
         }
-        return arr[end];
     }
 }
